@@ -10,18 +10,16 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        SetTarget(_radius);
+        Target = transform.position;
     }
 
     private void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, Target, _speed * Time.deltaTime);
-        if (transform.position == Target)
-            SetTarget(_radius);
-    }
 
-    private void SetTarget(int radius)
-    {
-        Target = Random.insideUnitCircle * radius;
+        if (transform.position == Target)
+        {
+            Target = Random.insideUnitCircle * _radius;
+        }
     }
 }
