@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
-    public float Speed => _speed;
+    public float Speed;
 
     private void Update()
     {
         float horizontalOffset = Input.GetAxis("Horizontal");
         float verticalOffset = Input.GetAxis("Vertical");
-
-        MoveTo(Vector3.right * horizontalOffset * _speed * Time.deltaTime);
-        MoveTo(Vector3.up * verticalOffset * _speed * Time.deltaTime);
+        Vector3 moveDirection = Vector3.right * horizontalOffset + Vector3.up * verticalOffset;
+        MoveTo(moveDirection * Speed * Time.deltaTime);
     }
 
     private void MoveTo(Vector3 position)
     {
         transform.Translate(position);
-    }
-
-    public void ChangeSpeed(float speed)
-    {
-        _speed = speed;
     }
 }

@@ -866,7 +866,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _game: {fileID: 534669906}
-  _time: 2
   _enemies:
   - {fileID: 147520196113911448}
   - {fileID: 1709944203}
@@ -884,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2aa443979b5c294087b792c58971420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  Speed: 5
 --- !u!1 &1897792428
 GameObject:
   m_ObjectHideFlags: 0

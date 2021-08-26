@@ -26,14 +26,9 @@ public class SpeedBooster : MonoBehaviour
 
     private IEnumerator StartBoost()
     {
-        WaitForSeconds delay = new WaitForSeconds(_boostTime);
-
-        _playerMovement.ChangeSpeed(_playerMovement.Speed + _speedOffset);
-        Debug.Log(_playerMovement.Speed);
-        yield return delay;
-        _playerMovement.ChangeSpeed(_playerMovement.Speed - _speedOffset);
-        Debug.Log(_playerMovement.Speed);
-
+        _playerMovement.Speed += _speedOffset;
+        yield return new WaitForSeconds(_boostTime);
+        _playerMovement.Speed -= _speedOffset;
     }
 }
 
